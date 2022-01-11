@@ -19,7 +19,7 @@ public class RandomDeleteRouter {
     @Bean
     public RouterFunction<ServerResponse> delete(RandomDeleteUseCase randomDeleteUseCase) {
         return route(
-                DELETE("/Delete/{id}").and(accept(MediaType.APPLICATION_JSON)),
+                DELETE("/delete/{id}").and(accept(MediaType.APPLICATION_JSON)),
                 request -> ServerResponse.ok()
                         .contentType(MediaType.TEXT_PLAIN)
                         .body(BodyInserters.fromPublisher(randomDeleteUseCase.apply(request.pathVariable("id")), String.class))

@@ -18,7 +18,7 @@ public class RandomCreateRouter {
     public RouterFunction<ServerResponse> postRandom(RandomCreateUseCase randomUseCase){
 
         return route(
-                POST("/BackFuncional").and(accept(MediaType.APPLICATION_JSON)),
+                POST("/backfuncional").and(accept(MediaType.APPLICATION_JSON)),
                 request -> request.bodyToMono(RequestDTO.class)
                         .flatMap(RequestDTO -> randomUseCase.apply(RequestDTO)
                                 .flatMap(result -> ServerResponse.ok()

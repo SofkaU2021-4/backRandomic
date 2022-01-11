@@ -20,7 +20,7 @@ public class RandomGetAllRouter {
     @Bean
     public RouterFunction<ServerResponse> getAllRandom(RandomGetAllUseCase randomGetAllUseCase){
         return route(
-                GET("/BackFuncional").and(accept(MediaType.APPLICATION_JSON)),
+                GET("/backfuncional").and(accept(MediaType.APPLICATION_JSON)),
                 request -> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
                         .body(BodyInserters.fromPublisher(randomGetAllUseCase.get(), Random.class))
